@@ -1,3 +1,1 @@
-#dotiles
-#dotfiles
 #dotfiles
