@@ -1,1 +1,1 @@
-#dotfiles
+My personal configuration files and scripts.
