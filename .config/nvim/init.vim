@@ -9,6 +9,15 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Linter python and others
 Plug 'w0rp/ale'
 
+" Install git diff plugin
+Plug 'airblade/vim-gitgutter'
+
+" Install git wrapper plugin
+Plug 'tpope/vim-fugitive'
+
+" Install git commit browser
+Plug 'junegunn/gv.vim'
+
 " autocomplete python
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
