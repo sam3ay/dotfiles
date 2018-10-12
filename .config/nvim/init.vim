@@ -30,6 +30,39 @@ Plug 'JuliaEditorSupport/julia-vim'
 " install julia autocomplete
 Plug 'JuliaEditorSupport/deoplete-julia'
 
+" snippets for multiple coding languages (Python)
+Plug 'honza/vim-snippets' 
+
+" Quick Comments
+Plug 'scrooloose/nerdcommenter'
+
+" Format code
+Plug 'sbdchd/neoformat'
+
+" Insert brackets, parens, quotes in pair
+Plug 'jiangmiao/auto-pairs'
+
+" Use RipGrep in vim
+Plug 'jremmen/vim-ripgrep'
+
+" Simplified quoting and parentheses
+Plug 'tpope/vim-surround'
+
+" Simple, easy-to-use alignment.
+Plug 'junegunn/vim-easy-align' 
+
+ " Fzf search. 
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+" Fzf search.
+Plug 'junegunn/fzf.vim' 
+
+" git wrapper
+Plug 'tpope/vim-fugitive'
+
+"Vim source for deoplete
+Plug 'Shougo/neco-vim', { 'for': 'vim' }
+
 " Initialize plugin system
 call plug#end()
 
@@ -41,6 +74,8 @@ let g:ale_linters = {'python': ['flake8']}
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
+" show docstrings in preview window
+g:deoplete#sources#jedi#show_docstring = 1
 
 " set statusbar defaults
 let g:airline_theme='solarized'
@@ -56,11 +91,13 @@ inoremap <silent><expr> <C-Space> deoplete#mappings#manual_complete()
 " Escape: exit autocompletion, go to Normal mode
 inoremap <silent><expr> <Esc> pumvisible() ? "<C-e><Esc>" : "<Esc>"
 
+syntax on
 " Tabs
 set tabstop=8 
 set softtabstop=4 
 set shiftwidth=4 
 set expandtab
+set wildmenu
 " Now set it if we open a go file autocmd FileType go nnoremap<buffer>
 " <Leader>T :call GoFunction()
 " autocmd FileType tex  let b:deoplete_disable_auto_complete = 1
