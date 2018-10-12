@@ -1,0 +1,26 @@
+# Compiled source #
+###################
+*.pyc
+*.com
+*.class
+*.dll
+*.exe
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+.Trashes
+ehthumbs.db
+Thumbs.db
