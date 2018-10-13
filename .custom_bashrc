@@ -6,6 +6,7 @@ alias please='sudo $(history -p !-1)'
 # E.g. typing !!<space> will replace the !! with your last command
 bind Space:magic-space
 
+export XDG_CONFIG_HOME=$HOME/dotfiles/.config
 # Use standard ISO 8601 timestamp
 # %F equivalent to %Y-%m-%d
 # %T equivalent to %H:%M:%S (24-hours format)
@@ -62,7 +63,7 @@ shopt -s globstar 2> /dev/null
 # Automatically trim long paths in the prompt (requires Bash 4.x)
 PROMPT_DIRTRIM=2
 
-default_username='sam3ay'
+default_username='samay'
 
 # color compat
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
@@ -129,10 +130,10 @@ set_prompts() {
         fi;
 
         userhost=""
-        userhost+="\[${userStyle}\]$USER "
-        userhost+="\[${white}\]at "
-        userhost+="\[${orange}\]$HOSTNAME "
-        userhost+="\[${white}\]in"
+        userhost+="\[${userStyle}\]$USER"
+        userhost+="\[${white}\]@"
+        userhost+="\[${orange}\]$HOSTNAME"
+        userhost+="\[${white}\]:"
 
         if [ $USER != "$default_username" ]; then echo $userhost ""; fi
     }
@@ -181,13 +182,13 @@ set_prompts() {
     # ------------------------------------------------------------------
     # | Prompt string                                                  |
     # ------------------------------------------------------------------
-
-    PS1="\[\033]0;\w\007\]"                                 # terminal title (set to the current working directory)
+    
+    # terminal title (set to the current working directory)
+    PS1="\[\033]0;\w\007\]"            
     PS1+="\n\[$bold\]"
     PS1+="\[$(usernamehost)\]"                              # username at host
     PS1+="\[$green\]\w"                                     # working directory
     PS1+="\$(prompt_git \"\[$white\] on \[$purple\]\" \"\[$cyan\]\")"   # git repository details
-    PS1+="\n"
     PS1+="\[$reset$white\]\\$ \[$reset\]"
 
     export PS1
@@ -210,16 +211,18 @@ set_prompts() {
     # FWIW, I have spent hours attempting to get time-per-command in here, but it's not possible. ~paul
     export PS4='+ \011\e[1;30m\t\011\e[1;34m${BASH_SOURCE}\e[0m:\e[1;36m${LINENO}\e[0m \011 ${FUNCNAME[0]:+\e[0;35m${FUNCNAME[0]}\e[1;30m()\e[0m:\011\011 }'
 
+}
+
 set_prompts
 unset set_prompts
 
 #####################################################
-# Powerline install
+# Powerline enable
 ####################################################
 
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-powerline_root=$(pip show powerline-status | grep Location | cut -d ':' -f2)
-. $(powerline_root)/powerline/bindings/bash/powerline.sh
+# powerline-daemon -q
+# POWERLINE_BASH_CONTINUATION=1
+# POWERLINE_BASH_SELECT=1
+# powerline_root=$(pip show powerline-status | grep Location | cut -d ':' -f2)
+# . $powerline_root/powerline/bindings/bash/powerline.sh
 
