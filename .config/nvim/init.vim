@@ -66,9 +66,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Fzf search.
 Plug 'junegunn/fzf.vim' 
 
-" git wrapper
-Plug 'tpope/vim-fugitive'
-
 "Vim source for deoplete
 Plug 'Shougo/neco-vim', { 'for': 'vim' }
 
