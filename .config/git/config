@@ -3,6 +3,7 @@
 	email = 30203976+sam3ay@users.noreply.github.com
 [core]
 	editor = nvim
+	excludesfile = /home/sam3ay/dotfiles/.gitignore_global
 [color]
 	ui = true
 
