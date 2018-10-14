@@ -81,7 +81,7 @@ let g:ale_linters = {'python': ['flake8']}
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
 " show docstrings in preview window
-g:deoplete#sources#jedi#show_docstring = 1
+let g:deoplete#sources#jedi#show_docstring = 1
 
 " set statusbar defaults
 let g:airline_theme='solarized'
