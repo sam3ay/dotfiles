@@ -23,7 +23,7 @@ export EDITOR=nvim
 #  Avoid duplicates
 export HISTCONTROL=ignoredups:erasedups
 # large history (default is 500)
-export HISTSIZE=100000
+export HISTSIZE=1000
 export HISTFILESIZE=$HISTSIZE
 # append to history, don't overwrite it
 type shopt &> /dev/null && shopt -s histappend  
