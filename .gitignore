@@ -1,0 +1,13 @@
+# Everything #
+##############
+*
+
+# Excluded directories #
+########################
+!*/.config/git
+!*/.config/nvim
+
+# Excluded files #
+########################
+!.gitignore*
+!*/.custom_bashrc

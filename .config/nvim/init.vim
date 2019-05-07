@@ -80,6 +80,7 @@ let g:ale_linters = {'python': ['flake8']}
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
+
 " show docstrings in preview window
 let g:deoplete#sources#jedi#show_docstring = 1
 

@@ -1,7 +1,7 @@
 # inspired by paulirish's dotfiles at https://github.com/paulirish/dotfiles
-
 alias please='sudo $(history -p !-1)'
 
+complete -r yum
 # Enable history expansion with space
 # E.g. typing !!<space> will replace the !! with your last command
 bind Space:magic-space
@@ -73,4 +73,3 @@ source ~/.bash-git-prompt/gitprompt.sh
 # POWERLINE_BASH_SELECT=1
 # powerline_root=$(pip show powerline-status | grep Location | cut -d ':' -f2)
 # . $powerline_root/powerline/bindings/bash/powerline.sh
-
