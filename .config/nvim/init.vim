@@ -39,14 +39,8 @@ Plug 'JuliaEditorSupport/julia-vim'
 " install julia autocomplete
 Plug 'JuliaEditorSupport/deoplete-julia'
 
-" snippets for multiple coding languages (Python)
-Plug 'honza/vim-snippets' 
-
 " Quick Comments
 Plug 'scrooloose/nerdcommenter'
-
-" Format code
-Plug 'sbdchd/neoformat'
 
 " Insert brackets, parens, quotes in pair
 Plug 'jiangmiao/auto-pairs'
@@ -66,7 +60,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Fzf search.
 Plug 'junegunn/fzf.vim' 
 
-"Vim source for deoplete
+" Vim source for deoplete
 Plug 'Shougo/neco-vim', { 'for': 'vim' }
 
 " Initialize plugin system
@@ -87,6 +81,18 @@ let g:deoplete#sources#jedi#show_docstring = 1
 " set statusbar defaults
 let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
+
+" enable fly mode autopairs
+let g:AutoPairsFlyMode = 1
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 0
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+" let g:NERDDefaultAlign = 'left'
 
 " Enter: complete&close popup if visible (so next Enter works); else: break undo
 inoremap <silent><expr> <Cr> pumvisible() ?
