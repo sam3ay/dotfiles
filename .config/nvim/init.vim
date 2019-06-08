@@ -2,6 +2,7 @@
 filetype on
 
 " let g:mapleader set leader key represented by <LEADER> 
+" default leader key is \
 
 " Plugin Manager
 call plug#begin('~/.local/share/nvim/plugged')
@@ -48,6 +49,12 @@ Plug 'jiangmiao/auto-pairs'
 " Use RipGrep in vim
 Plug 'jremmen/vim-ripgrep'
 
+" Install ulti-snip patterns
+Plug 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+Plug 'honza/vim-snippets'
+
 " Simplified quoting and parentheses
 Plug 'tpope/vim-surround'
 
@@ -86,10 +93,17 @@ let g:airline_solarized_bg='dark'
 let g:AutoPairsFlyMode = 1
 
 " Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 0
+let g:NERDSpaceDelims = 1
 
 " Use compact syntax for prettified multi-line comments
 let g:NERDCompactSexyComs = 1
+
+" Enable Ultisnips code patterns
+let g:UltiSnipsExpandTrigger="<c-q>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:ultisnips_python_style="google"
+command! -bar -bang Snippets call fzf#vim#snippets({'options': '-n ..'}, <bang>0)
 
 " Align line-wise comment delimiters flush left instead of following code indentation
 " let g:NERDDefaultAlign = 'left'
@@ -119,5 +133,7 @@ augroup omnifuncs
   autocmd FileType python setlocal omnifunc=jedi#completions
 "  autocmd FileType julia setlocal omnifunc=
 augroup end
+
+" autopair specific define au FileType php # let b:AutoPairs = AutoPairsDefine({'<?' : '?>', '<?php': '?>'})
 
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
