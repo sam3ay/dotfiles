@@ -12,3 +12,4 @@
 ########################
 !.gitignore*
 !*/.custom_bashrc
+!.json
