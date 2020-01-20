@@ -6,10 +6,9 @@
 ########################
 !*/.config/git
 !*/.config/nvim
-!*/.vscode
+!*/.config/vscode
 
 # Excluded files #
 ########################
 !.gitignore*
 !*/.custom_bashrc
-!.json
