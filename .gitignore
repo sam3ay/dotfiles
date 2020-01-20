@@ -6,6 +6,7 @@
 ########################
 !*/.config/git
 !*/.config/nvim
+!*/.vscode
 
 # Excluded files #
 ########################
