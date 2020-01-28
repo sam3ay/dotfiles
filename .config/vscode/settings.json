@@ -11,5 +11,47 @@
         "GATK",
         "Indels",
         "SNPs"
+    ],
+    "vim.hlsearch": true,
+    "vim.easymotion": true,
+    "vim.enableNeovim": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<C-n>"
+            ],
+            "commands": [
+                ":nohl",
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "w"
+            ],
+            "commands": [
+                "workbench.action.files.save",
+            ]
+        }
+    {
+        "before": [
+            "Z",
+            "Z"
+        ],
+        "commands": [
+            ":wq"
+        ]
+    }
     ]
 }
