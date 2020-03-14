@@ -1,0 +1,64 @@
+{
+    "workbench.colorTheme": "Solarized Dark",
+    "editor.insertSpaces": false,
+    "editor.formatOnPaste": true,
+    "workbench.iconTheme": "vscode-icons",
+    "git.smartCommitChanges": "tracked",
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "cSpell.userWords": [
+        "Dataproc",
+        "GATK",
+        "Indels",
+        "SNPs"
+    ],
+    "vim.hlsearch": true,
+    "vim.easymotion": true,
+    "vim.enableNeovim": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<C-n>"
+            ],
+            "commands": [
+                ":nohl",
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "w"
+            ],
+            "commands": [
+                "workbench.action.files.save",
+            ]
+        },
+    {
+        "before": [
+            "Z",
+            "Z"
+        ],
+        "commands": [
+            ":wq"
+        ]
+    }
+    ],
+    "vim.neovimPath": "/usr/bin/nvim",
+    "sync.gist": "f7457c614237f2e1fa05c5f933450802",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "path-intellisense.showHiddenFiles": true,
+    "python.autoComplete.addBrackets": true,
+    "vim.highlightedyank.enable": true
+}
