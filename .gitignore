@@ -7,7 +7,7 @@
 !*/.config/git
 !*/.config/nvim
 !*/.config/vscode
-!*/.config/Code/User/settings.json
+!*/.config/Code/User/win_settings.json
 
 # Excluded files #
 ########################
