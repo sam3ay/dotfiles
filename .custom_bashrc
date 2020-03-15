@@ -26,7 +26,7 @@ export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=1000
 export HISTFILESIZE=$HISTSIZE
 # append to history, don't overwrite it
-type shopt &> /dev/null && shopt -s histappend  
+type shopt &>/dev/null && shopt -s histappend
 
 # ignore commands
 export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
@@ -38,32 +38,35 @@ shopt -s cmdhist
 # up on the readline goes over all history not just this session.
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
-
 ######################################################
 ## 'cd' Command
 ######################################################
 
 # Case-insensitive globbing (used in pathname expansion)
-shopt -s nocaseglob;
+shopt -s nocaseglob
 
 # Correct spelling errors in arguments supplied to cd
-shopt -s cdspell;
+shopt -s cdspell
 
 # Autocorrect on directory names to match a glob.
-shopt -s dirspell 2> /dev/null
+shopt -s dirspell 2>/dev/null
 
 # Turn on recursive globbing (enables ** to recurse all directories)
-shopt -s globstar 2> /dev/null
-
+shopt -s globstar 2>/dev/null
 
 #####################################################
-## Prompt
-#  Taken from https://github.com/magicmonty/bash-git-prompt
+## Git in Prompt
+# taken from https://askubuntu.com/q/1043610
+# additions from
+#https://web.archive.org/web/20160704140739/http://ithaca.arpinum.org/2013/01/02/git-prompt.html
 #####################################################
 
-GIT_PROMPT_ONLY_IN_REPO=2
-source ~/.bash-git-prompt/gitprompt.sh
-
+source /usr/lib/git-core/git-sh-prompt
+PROMPT_COMMAND='__git_ps1 "\u \W" "\\\$ " " [%s $(get_sha)] "; set_titlebar "$USER@${HOSTNAME%%.*} $(get_dir)"'
+export GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWCOLORHINTS=1
+export GIT_PS1_SHOWSTASHSTATE=1
+export GIT_PS1_SHOWUNTRACKEDFILES=1
 #####################################################
 # Powerline enable
 ####################################################
