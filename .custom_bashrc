@@ -5,7 +5,7 @@ complete -r yum
 # Enable history expansion with space
 # E.g. typing !!<space> will replace the !! with your last command
 bind Space:magic-space
-#### if current dir is needed 
+#### if current dir is needed
 ## https://stackoverflow.com/q/59895
 DIR="$(cd -P "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 export XDG_CONFIG_HOME="$DIR/.config"
@@ -62,16 +62,40 @@ shopt -s globstar 2>/dev/null
 # additions from
 #https://web.archive.org/web/20160704140739/http://ithaca.arpinum.org/2013/01/02/git-prompt.html
 #####################################################
-##### CHECK UPDATE STATE 
-if [ -f $DIR/git-prompt.sh ]; then
-    . $DIR/git-prompt.sh
-	PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
-	GIT_PS1_SHOWDIRTYSTATE=1
-	GIT_PS1_SHOWCOLORHINTS=1
-	GIT_PS1_HIDE_IF_PWD_IGNORED=1
-	GIT_PS1_SHOWSTASHSTATE=1
-	GIT_PS1_SHOWUNTRACKEDFILES=1
-fi
+##### CHECK UPDATE STATE
+# if [ -f $DIR/git-prompt.sh ]; then
+#     . $DIR/git-prompt.sh
+# 	PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
+# 	GIT_PS1_SHOWDIRTYSTATE=1
+# 	GIT_PS1_SHOWCOLORHINTS=1
+# 	GIT_PS1_HIDE_IF_PWD_IGNORED=1
+# 	GIT_PS1_SHOWSTASHSTATE=1
+# 	GIT_PS1_SHOWUNTRACKEDFILES=1
+# fi
+# Set config variables first
+
+GIT_PROMPT_ONLY_IN_REPO=1
+
+# GIT_PROMPT_FETCH_REMOTE_STATUS=0   # uncomment to avoid fetching remote status
+# GIT_PROMPT_IGNORE_SUBMODULES=1 # uncomment to avoid searching for changed files in submodules
+# GIT_PROMPT_WITH_VIRTUAL_ENV=0 # uncomment to avoid setting virtual environment infos for node/python/conda environments
+
+# GIT_PROMPT_SHOW_UPSTREAM=1 # uncomment to show upstream tracking branch
+# GIT_PROMPT_SHOW_UNTRACKED_FILES=normal # can be no, normal or all; determines counting of untracked files
+
+# GIT_PROMPT_SHOW_CHANGED_FILES_COUNT=0 # uncomment to avoid printing the number of changed files
+
+# GIT_PROMPT_STATUS_COMMAND=gitstatus_pre-1.7.10.sh # uncomment to support Git older than 1.7.10
+
+# GIT_PROMPT_START=...    # uncomment for custom prompt start sequence
+# GIT_PROMPT_END=...      # uncomment for custom prompt end sequence
+
+# as last entry source the gitprompt script
+# GIT_PROMPT_THEME=Custom # use custom theme specified in file GIT_PROMPT_THEME_FILE (default ~/.git-prompt-colors.sh)
+# GIT_PROMPT_THEME_FILE=~/.git-prompt-colors.sh
+# GIT_PROMPT_THEME=Solarized # use theme optimized for solarized color scheme
+source $XDG_CONFIG_HOME/.bash-git-prompt/gitprompt.sh
+
 #####################################################
 # Powerline enable
 ####################################################

@@ -4,11 +4,12 @@
 
 # Excluded directories #
 ########################
-!*/.config/git
-!*/.config/nvim
-!*/.config/vscode
-!*/.config/Code/User/win_settings.json
-!*/git-prompt.sh
+!*.config/git/
+!*.config/nvim/
+!*.config/vscode/
+!*.config/Code/User/win_settings.json
+!*git-prompt.sh
+!*.bash-git-prompt/
 
 # Excluded files #
 ########################
