@@ -5,8 +5,10 @@ complete -r yum
 # Enable history expansion with space
 # E.g. typing !!<space> will replace the !! with your last command
 bind Space:magic-space
-
-export XDG_CONFIG_HOME="$HOME/dotfiles/.config"
+#### if current dir is needed 
+## https://stackoverflow.com/q/59895
+DIR="$(cd -P "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+export XDG_CONFIG_HOME="$DIR/.config"
 # Use standard ISO 8601 timestamp
 # %F equivalent to %Y-%m-%d
 # %T equivalent to %H:%M:%S (24-hours format)
@@ -61,7 +63,7 @@ shopt -s globstar 2>/dev/null
 #https://web.archive.org/web/20160704140739/http://ithaca.arpinum.org/2013/01/02/git-prompt.html
 #####################################################
 ##### CHECK UPDATE STATE 
-if [ -f $XDG_CONFIG_HOME/git-prompt.sh ]; then
+if [ -f $DIR/git-prompt.sh ]; then
     . $XDG_CONFIG_HOME/git-prompt.sh
 	PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
 	GIT_PS1_SHOWDIRTYSTATE=1
@@ -79,5 +81,3 @@ fi
 # POWERLINE_BASH_SELECT=1
 # powerline_root=$(pip show powerline-status | grep Location | cut -d ':' -f2)
 # . $powerline_root/powerline/bindings/bash/powerline.sh
-#### if current dir is needed DIR="$(cd -P "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-## https://stackoverflow.com/q/59895
