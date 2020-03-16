@@ -61,7 +61,7 @@ shopt -s globstar 2>/dev/null
 #https://web.archive.org/web/20160704140739/http://ithaca.arpinum.org/2013/01/02/git-prompt.html
 #####################################################
 ##### CHECK UPDATE STATE 
-source ./git-sh-prompt
+. ./git-sh-prompt
 PROMPT_COMMAND='__git_ps1 "\u \W" "\\\$ " " [%s $(get_sha)] "; set_titlebar "$USER@${HOSTNAME%%.*} $(get_dir)"'
 export GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWCOLORHINTS=1
