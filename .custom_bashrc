@@ -64,7 +64,7 @@ shopt -s globstar 2>/dev/null
 #####################################################
 ##### CHECK UPDATE STATE 
 if [ -f $DIR/git-prompt.sh ]; then
-    . $XDG_CONFIG_HOME/git-prompt.sh
+    . $DIR/git-prompt.sh
 	PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
 	GIT_PS1_SHOWDIRTYSTATE=1
 	GIT_PS1_SHOWCOLORHINTS=1
