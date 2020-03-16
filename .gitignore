@@ -8,6 +8,7 @@
 !*/.config/nvim
 !*/.config/vscode
 !*/.config/Code/User/win_settings.json
+!*/git-prompt.sh
 
 # Excluded files #
 ########################
