@@ -1,18 +1,18 @@
 [user]
-	name = Sam Ay
-	email = 30203976+sam3ay@users.noreply.github.com
+name = Sam Ay
+email = 30203976+sam3ay@users.noreply.github.com
 [core]
-	editor = nvim
-	excludesfile = /home/sam3ay/dotfiles/.gitignore_global
+editor = nvim
+excludesfile = /home/sam3ay/dotfiles/.gitignore_global
 [color]
-	ui = true
+ui = true
 [merge]
-  tool = vimdiff
+tool = vimdiff
 [mergetool]
-  prompt = true
+prompt = true
 [mergetool "vimdiff"]
-  cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [difftool]
-  prompt = false
+prompt = false
 [diff]
-  tool = vimdiff
+tool = vimdiff
