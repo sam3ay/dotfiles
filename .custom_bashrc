@@ -61,13 +61,15 @@ shopt -s globstar 2>/dev/null
 #https://web.archive.org/web/20160704140739/http://ithaca.arpinum.org/2013/01/02/git-prompt.html
 #####################################################
 ##### CHECK UPDATE STATE 
-. git-sh-prompt
-PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
-export GIT_PS1_SHOWDIRTYSTATE=1
-export GIT_PS1_SHOWCOLORHINTS=1
-export GIT_PS1_HIDE_IF_PWD_IGNORED=1
-export GIT_PS1_SHOWSTASHSTATE=1
-export GIT_PS1_SHOWUNTRACKEDFILES=1
+if [ -f $XDG_CONFIG_HOME/git-prompt.sh ]; then
+    . $XDG_CONFIG_HOME/git-prompt.sh
+	PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
+	GIT_PS1_SHOWDIRTYSTATE=1
+	GIT_PS1_SHOWCOLORHINTS=1
+	GIT_PS1_HIDE_IF_PWD_IGNORED=1
+	GIT_PS1_SHOWSTASHSTATE=1
+	GIT_PS1_SHOWUNTRACKEDFILES=1
+fi
 #####################################################
 # Powerline enable
 ####################################################
@@ -77,3 +79,5 @@ export GIT_PS1_SHOWUNTRACKEDFILES=1
 # POWERLINE_BASH_SELECT=1
 # powerline_root=$(pip show powerline-status | grep Location | cut -d ':' -f2)
 # . $powerline_root/powerline/bindings/bash/powerline.sh
+#### if current dir is needed DIR="$(cd -P "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+## https://stackoverflow.com/q/59895
