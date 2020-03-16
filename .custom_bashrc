@@ -62,9 +62,10 @@ shopt -s globstar 2>/dev/null
 #####################################################
 ##### CHECK UPDATE STATE 
 . ./git-sh-prompt
-PROMPT_COMMAND='__git_ps1 "\u \W" "\\\$ " " [%s $(get_sha)] "; set_titlebar "$USER@${HOSTNAME%%.*} $(get_dir)"'
+PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
 export GIT_PS1_SHOWDIRTYSTATE=1
-GIT_PS1_SHOWCOLORHINTS=1
+export GIT_PS1_SHOWCOLORHINTS=1
+export GIT_PS1_HIDE_IF_PWD_IGNORED=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 #####################################################
