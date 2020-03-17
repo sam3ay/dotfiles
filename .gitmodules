@@ -1,6 +1,6 @@
 [submodule ".config/.bash-git-prompt"]
 	path = .config/.bash-git-prompt
-	url = https://github.com/magicmonty/bash-git-prompt.git
+	url = https://github.com/sam3ay/bash-git-prompt.git
 [submodule ".bash-git-prompt"]
 	path = .bash-git-prompt
 	url = C:/Users/sam.ay1196/Documents/GitHub/dotfiles/.config/.bash-git-prompt/
