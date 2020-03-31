@@ -11,6 +11,7 @@
 !*.config/Code/User/win_settings.json
 !*git-prompt.sh
 !*.bash-git-prompt
+!*.config/zsh
 
 # Excluded files #
 ########################

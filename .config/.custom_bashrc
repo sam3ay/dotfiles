@@ -8,11 +8,12 @@ bind Space:magic-space
 #### if current dir is needed
 ## https://stackoverflow.com/q/59895
 DIR="$(cd -P "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-export XDG_CONFIG_HOME="$DIR/.config"
+export XDG_CONFIG_HOME="$DIR"
 # Use standard ISO 8601 timestamp
 # %F equivalent to %Y-%m-%d
 # %T equivalent to %H:%M:%S (24-hours format)
 export HISTTIMEFORMAT='%F %T '
+export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 
 # default editor neovim
 export EDITOR=nvim
