@@ -1,15 +1,3 @@
 [submodule ".config/.bash-git-prompt"]
 	path = .config/.bash-git-prompt
 	url = https://github.com/sam3ay/.bash-git-prompt.git
-[submodule ".oh-my-zsh"]
-	path = .oh-my-zsh
-	url = /home/sam3ay/dotfiles/.config/zsh/.oh-my-zsh
-[submodule "fzf-tab"]
-	path = fzf-tab
-	url = /home/sam3ay/dotfiles/.config/zsh/.oh-my-zsh/custom/plugins/fzf-tab
-[submodule "zsh-autosuggestions"]
-	path = zsh-autosuggestions
-	url = /home/sam3ay/dotfiles/.config/zsh/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-[submodule "zsh-syntax-highlighting"]
-	path = zsh-syntax-highlighting
-	url = /home/sam3ay/dotfiles/.config/zsh/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
