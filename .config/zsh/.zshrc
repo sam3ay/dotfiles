@@ -9,14 +9,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Lines configured by zsh-newuser-install
-HISTFILE=~/dotfiles/.config/zsh/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-DIR="$(cd -P "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CURR=${(%):-%x}
+DIR="$( cd -P "$( dirname "$CURR"  )" && pwd  )"
 # Path to your oh-my-zsh installation.
 export ZSH="${DIR}/.oh-my-zsh"
 # Uncomment the following line to enable command auto-correction.
@@ -26,6 +21,12 @@ ZSH_DISABLE_COMPFIX="true"
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
 DISABLE_UNTRACKED_FILES_DIRTY="true"
+# Lines configured by zsh-newuser-install
+HISTFILE=${DIR}/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -75,7 +76,7 @@ compinit
 source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/dotfiles/.config/zsh/.p10k.zsh.
 
-[[ ! -f ~/dotfiles/.config/zsh/.p10k.zsh ]] || source ~/dotfiles/.config/zsh/.p10k.zsh
+[[ ! -f ${DIR}/.p10k.zsh ]] || source ${DIR}/.p10k.zsh
 
 #########ZLE
 ##########Keybinding################
