@@ -110,8 +110,6 @@ export ZSH="/home/sam3ay/dotfiles/.config/zsh/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
-setopt appendhistory autocd extendedglob nomatch notify
-
 setopt ALWAYS_TO_END           # full completions move cursor to the end
 setopt AUTO_CD                 # `dirname` is equivalent to `cd dirname`
 setopt AUTO_PARAM_SLASH        # if completed parameter is a directory, add a trailing slash
@@ -146,6 +144,7 @@ plugins=(
   fzf-tab
   git
   zsh-autosuggestions
+  zsh-syntax-highlighting
   )
 autoload -Uz compinit
 compinit
