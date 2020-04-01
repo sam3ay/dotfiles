@@ -6,7 +6,7 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 
@@ -14,6 +14,7 @@ CURR=${(%):-%x}
 DIR="$( cd -P "$( dirname "$CURR"  )" && pwd  )"
 # Path to your oh-my-zsh installation.
 export ZSH="${DIR}/.oh-my-zsh"
+export ZSH_CUSTOM=${DIR}/custom
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
 ZSH_DISABLE_COMPFIX="true"
@@ -64,13 +65,13 @@ setopt SHARE_HISTORY           # write and import history on every command
 zstyle :compinstall filename '${DIR}/.zshrc'
 
 plugins=(
-  bundler
-  dotenv
-  fzf-tab
-  git
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-  )
+    bundler
+    dotenv
+    fzf-tab
+    git
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+)
 autoload -Uz compinit
 compinit
 source $ZSH/oh-my-zsh.sh
@@ -81,7 +82,7 @@ source $ZSH/oh-my-zsh.sh
 #########ZLE
 ##########Keybinding################
 bindkey -v
-bindkey '^ '      autosuggest-accept               
+bindkey '^ '      autosuggest-accept
 ####################################
 
 # Example aliases
