@@ -1,9 +1,6 @@
 [submodule ".config/.bash-git-prompt"]
 path = .config/.bash-git-prompt
 url = https://github.com/sam3ay/.bash-git-prompt.git
-[submodule "/home/sam3ay/dotfiles/.config/zsh/custom/themes/powerlevel10k"]
-path = /home/sam3ay/dotfiles/.config/zsh/custom/themes/powerlevel10k
-url = https://github.com/romkatv/powerlevel10k.git
 [submodule "/home/sam3ay/dotfiles/.config/zsh/.oh-my-zsh"]
 path = /home/sam3ay/dotfiles/.config/zsh/.oh-my-zsh
 url = https://github.com/ohmyzsh/ohmyzsh.git
@@ -17,5 +14,5 @@ url = https://github.com/zsh-users/zsh-autosuggestions
 path = .config/zsh/custom/plugins/zsh-syntax-highlighting
 url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule ".config/zsh/custom/themes/powerlevel10k"]
-	path = .config/zsh/custom/themes/powerlevel10k
-	url = https://github.com/romkatv/powerlevel10k.git
+path = .config/zsh/custom/themes/powerlevel10k
+url = https://github.com/romkatv/powerlevel10k.git
