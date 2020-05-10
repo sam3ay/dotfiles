@@ -71,11 +71,15 @@ plugins=(
     git
     zsh-autosuggestions
     zsh-syntax-highlighting
+    virtualenv
 )
 autoload -Uz compinit
 compinit
 source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/dotfiles/.config/zsh/.p10k.zsh.
+
+# venv
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time virtualenv)
 
 [[ ! -f ${DIR}/.p10k.zsh ]] || source ${DIR}/.p10k.zsh
 
