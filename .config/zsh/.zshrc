@@ -67,7 +67,7 @@ zstyle :compinstall filename '${DIR}/.zshrc'
 plugins=(
     bundler
     dotenv
-    fzf-tab
+    fzf
     git
     zsh-autosuggestions
     zsh-syntax-highlighting
