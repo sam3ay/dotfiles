@@ -1,0 +1,109 @@
+# inspired by paulirish's dotfiles at https://github.com/paulirish/dotfiles
+alias please='sudo $(history -p !-1)'
+
+complete -r yum
+# Enable history expansion with space
+# E.g. typing !!<space> will replace the !! with your last command
+bind Space:magic-space
+#### if current dir is needed
+## https://stackoverflow.com/q/59895
+DIR="$(cd -P "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# export XDG_CONFIG_HOME="$DIR"
+# Use standard ISO 8601 timestamp
+# %F equivalent to %Y-%m-%d
+# %T equivalent to %H:%M:%S (24-hours format)
+export HISTTIMEFORMAT='%F %T '
+export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
+
+# default editor neovim
+export EDITOR=nvim
+
+########################################################
+# keep history up to date, across sessions, in realtime
+# https://unix.stackexchange.com/a/1292
+########################################################
+
+#  Avoid duplicates
+export HISTCONTROL=ignoredups:erasedups
+# large history (default is 500)
+export HISTSIZE=100000
+export HISTFILESIZE=100000
+# append to history, don't overwrite it
+type shopt &>/dev/null && shopt -s histappend
+
+# ignore commands
+export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
+
+# multi-line commands saved as one command
+shopt -s cmdhist
+
+# Save and reload the history after each command finishes (problematic: can be slow)
+# up on the readline goes over all history not just this session.
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
+######################################################
+## 'cd' Command
+######################################################
+
+# Case-insensitive globbing (used in pathname expansion)
+shopt -s nocaseglob
+
+# Correct spelling errors in arguments supplied to cd
+shopt -s cdspell
+
+# Autocorrect on directory names to match a glob.
+shopt -s dirspell 2>/dev/null
+
+# Turn on recursive globbing (enables ** to recurse all directories)
+shopt -s globstar 2>/dev/null
+
+#####################################################
+## Git in Prompt
+# taken from https://askubuntu.com/q/1043610
+# additions from
+#https://web.archive.org/web/20160704140739/http://ithaca.arpinum.org/2013/01/02/git-prompt.html
+#####################################################
+##### CHECK UPDATE STATE
+# if [ -f $DIR/git-prompt.sh ]; then
+#     . $DIR/git-prompt.sh
+# 	PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
+# 	GIT_PS1_SHOWDIRTYSTATE=1
+# 	GIT_PS1_SHOWCOLORHINTS=1
+# 	GIT_PS1_HIDE_IF_PWD_IGNORED=1
+# 	GIT_PS1_SHOWSTASHSTATE=1
+# 	GIT_PS1_SHOWUNTRACKEDFILES=1
+# fi
+# Set config variables first
+
+GIT_PROMPT_ONLY_IN_REPO=0
+GIT_PROMPT_THEME=Minimal_UserHost
+GIT_PROMPT_IGNORE_SUBMODULES=1
+# GIT_PROMPT_FETCH_REMOTE_STATUS=0   # uncomment to avoid fetching remote status
+# GIT_PROMPT_IGNORE_SUBMODULES=1 # uncomment to avoid searching for changed files in submodules
+# GIT_PROMPT_WITH_VIRTUAL_ENV=0 # uncomment to avoid setting virtual environment infos for node/python/conda environments
+
+# GIT_PROMPT_SHOW_UPSTREAM=1 # uncomment to show upstream tracking branch
+# GIT_PROMPT_SHOW_UNTRACKED_FILES=normal # can be no, normal or all; determines counting of untracked files
+
+# GIT_PROMPT_SHOW_CHANGED_FILES_COUNT=0 # uncomment to avoid printing the number of changed files
+
+# GIT_PROMPT_STATUS_COMMAND=gitstatus_pre-1.7.10.sh # uncomment to support Git older than 1.7.10
+
+# GIT_PROMPT_START=...    # uncomment for custom prompt start sequence
+# GIT_PROMPT_END=...      # uncomment for custom prompt end sequence
+
+# as last entry source the gitprompt script
+# GIT_PROMPT_THEME=Custom # use custom theme specified in file GIT_PROMPT_THEME_FILE (default ~/.git-prompt-colors.sh)
+# GIT_PROMPT_THEME_FILE=~/.git-prompt-colors.sh
+# GIT_PROMPT_THEME=Solarized # use theme optimized for solarized color scheme
+. $XDG_CONFIG_HOME/oh-my-git/prompt.sh
+
+#####################################################
+# Powerline enable
+####################################################
+
+# powerline-daemon -q
+# POWERLINE_BASH_CONTINUATION=1
+# POWERLINE_BASH_SELECT=1
+# powerline_root=$(pip show powerline-status | grep Location | cut -d ':' -f2)
+# . $powerline_root/powerline/bindings/bash/powerline.sh
