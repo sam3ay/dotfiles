@@ -7,11 +7,12 @@ fi
 CURR=${(%):-%x}
 DIR="$( cd -P "$( dirname "$CURR"  )" && pwd  )"
 # Path to your oh-my-zsh installation.
-export ZSH="${DIR}/ohmyzsh"
+export ZSH="${DIR}/.oh-my-zsh"
 export ZSH_CUSTOM=${DIR}/custom
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
 ZSH_DISABLE_COMPFIX="true"
+DISABLE_AUTO_UPDATE="true"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
