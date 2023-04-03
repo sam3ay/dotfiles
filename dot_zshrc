@@ -1,0 +1,24 @@
+# Created by newuser for 5.9
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/.zshrc
+fi
+
+# User specific environment prepend to path
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+CURR=${(%):-%x}
+DIR="$( cd -P "$( dirname "$CURR"  )" && pwd  )"
+export XDG_CONFIG_HOME="${DIR}/.config"
+# Path to your oh-my-zsh installation.
+export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
+export EDITOR=nvim
+# Uncomment the following line to enable command auto-correction.
+ZSH_DISABLE_COMPFIX="true"
+
+. "${ZDOTDIR}/.custom_zshrc"
