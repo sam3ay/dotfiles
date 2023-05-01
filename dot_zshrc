@@ -21,4 +21,4 @@ export EDITOR=nvim
 # Uncomment the following line to enable command auto-correction.
 ZSH_DISABLE_COMPFIX="true"
 
-. "${ZDOTDIR}/.custom_zshrc"
+. "${ZDOTDIR}/.zshrc"
