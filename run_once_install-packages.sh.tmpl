@@ -1,0 +1,4 @@
+{{- if (and (eq .chezmoi.os "linux") (not .codespaces)) -}}
+#!/bin/sh
+sudo apt install -y fzf
+{{- end -}}
