@@ -81,7 +81,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs histor
 
 #########ZLE
 ##########Keybinding################
-# bindkey -v
+bindkey -v
 # bindkey '^ '      autosuggest-accept
 ####################################
 
